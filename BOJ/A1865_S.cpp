@@ -2,24 +2,10 @@
 // Bellman-Ford Algorithm
 
 #include <iostream>
-#include <stack>
-#include <queue>
 #include <vector>
-#include <utility>
-#include <set>
-#include <tuple>
-#include <list>
-#include <map>
-#include <unordered_map>
-#include <string>
 #include <algorithm>
-
 using namespace std;
-#define ll	long long
 #define BtoE(vec) vec.begin(), vec.end()
-#define Pii pair<int, int>
-#define Psi pair<string, int>
-#define Tii tuple<int, int, int>
 #define INF (1e9 + 7)
 
 struct edge {
@@ -45,7 +31,6 @@ bool bellman_ford(vector<edge>& edges) {
 int main() {
 	cin.tie(NULL); cout.tie(NULL);
 	ios_base::sync_with_stdio(false);
-	//freopen("input.txt", "r", stdin);
 
 	int tc;
 
