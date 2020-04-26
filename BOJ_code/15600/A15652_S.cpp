@@ -1,11 +1,10 @@
-// BOJ 15650 N°ú M (2)
+// BOJ 15652 N°ú M (4)
 // Backtracking
 
 #include <iostream>
 #include <vector>
 using namespace std;
 
-bool used[10];
 vector<int> ans;
 
 void n_m(int n, int m, int k) {
@@ -17,10 +16,9 @@ void n_m(int n, int m, int k) {
 	}
 
 	for (int i = k; i <= n; ++i) {
-		if (used[i]) continue;
-		ans.push_back(i); used[i] = true;
-		n_m(n, m, i + 1);
-		ans.pop_back(); used[i] = false;
+		ans.push_back(i);
+		n_m(n, m, i);
+		ans.pop_back();
 	}
 }
 int main() {
