@@ -1,5 +1,5 @@
 // BOJ 2798 블랙잭
-// 구현
+// Brute force
 
 #include <iostream>
 #include <algorithm>
