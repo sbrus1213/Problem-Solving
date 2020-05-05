@@ -1,4 +1,4 @@
-// BOJ 1912 ¿¬¼ÓÇÕ
+// BOJ 1912 ì—°ì†í•©
 // Dynamic Programming
 
 #include <iostream>
@@ -9,22 +9,17 @@ int main() {
 	cin.tie(NULL); cout.tie(NULL);
 	ios_base::sync_with_stdio(false);
 
-	int n, dp[100001] = {};
+	int n;
 
 	cin >> n;
 
+	int res = -1e9, dp = 0;
 	for (int i = 1; i <= n; ++i) {
-		int x;
-
-		cin >> x;
-
-		if (dp[i - 1] < 0) dp[i] = x;
-		else dp[i] = dp[i - 1] + x;
+		int x; cin >> x;
+		if (dp < 0) dp = x;
+		else dp += x;
+		res = max(res, dp);
 	}
-
-	int res = -1e9;
-	for (int i = 1; i <= n; ++i)
-		res = max(res, dp[i]);
 
 	cout << res;
 }
