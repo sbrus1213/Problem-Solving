@@ -1,5 +1,5 @@
 // BOJ 13343 Block Game
-// nim game
+// game theory
 
 #include <iostream>
 #include <algorithm>
@@ -14,10 +14,7 @@ int main() {
 
 	while (a && b) {
 		if (a < b) swap(a, b);
-		if (!(a % b)) break;
-		if (a >= 2 * b) {
-			a %= b;
-		}
+		if (a == b || a >= 2 * b) break;
 		else {
 			a -= b;
 			fl = !fl;
