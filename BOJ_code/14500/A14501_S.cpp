@@ -1,27 +1,21 @@
-// BOJ 14501 Επ»η
+// BOJ 14501 ν‡΄μ‚¬
 // Brute Force
 
 #include <iostream>
 #include <algorithm>
 using namespace std;
 
-int n, time[16], price[16], maxp[16] = {};
+int n, time[16], price[16];
 
-int find_max(int today) {
-	if (today > n) return 0;
-	if (today == n) {
-		if (time[today] == 1) return price[today];
-		else return 0;
-	}
+int go(int day) {
+	if (day > n) return 0;
+	if (day == n) return time[day] == 1 ? price[day] : 0;
 
-	int res = 0;
-
-	if (time[today] <= n - today + 1) {
-		res = max(res, find_max(today + time[today]) + price[today]);
-	}
-	res = max(res, find_max(today + 1));
-
-	return res;
+	int ret = 0;
+	if (day + time[day] <= n + 1)
+		ret = max(ret, go(day + time[day]) + price[day]);
+	ret = max(ret, go(day + 1));
+	return ret;
 }
 
 int main() {
@@ -30,7 +24,8 @@ int main() {
 
 	cin >> n;
 
-	for (int i = 1; i <= n; ++i) cin >> time[i] >> price[i];
+	for (int i = 1; i <= n; ++i)
+		cin >> time[i] >> price[i];
 
-	cout << find_max(1);
+	cout << go(1);
 }
