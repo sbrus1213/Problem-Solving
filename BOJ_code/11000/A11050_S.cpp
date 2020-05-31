@@ -1,4 +1,4 @@
-// BOJ 11050 ÀÌÇ× °è¼ö 1
+// BOJ 11050 ì´í•­ ê³„ìˆ˜ 1
 // Combinatorics
 
 #include <iostream>
@@ -7,7 +7,7 @@ using namespace std;
 int main() {
 	cin.tie(NULL); cout.tie(NULL);
 	ios_base::sync_with_stdio(false);
-	
+
 	int n, k, res = 1;
 
 	cin >> n >> k;

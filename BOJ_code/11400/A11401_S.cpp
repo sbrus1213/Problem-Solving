@@ -1,10 +1,10 @@
-// BOJ 11401 ÀÌÇ× °è¼ö3
+// BOJ 11401 ì´í•­ ê³„ìˆ˜3
 // combinatorics & exponentiation by squaring
 
 #include <iostream>
 using namespace std;
 using ll = long long;
-const int mod = 1000000007;
+const ll mod = 1000000007;
 
 ll exp_sq(ll x, ll times) {
 	ll res = 1;
