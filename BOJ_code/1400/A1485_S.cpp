@@ -1,5 +1,5 @@
-// BOJ 1485 Á¤»ç°¢Çü
-// ±âÇÏ
+// BOJ 1485 ì •ì‚¬ê°í˜•
+// ê¸°í•˜
 
 #include <iostream>
 #include <algorithm>
@@ -9,6 +9,7 @@ using namespace std;
 struct P {
 	ll x, y;
 };
+
 int main() {
 	cin.tie(NULL); cout.tie(NULL);
 	ios_base::sync_with_stdio(false);
