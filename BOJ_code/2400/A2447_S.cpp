@@ -1,5 +1,5 @@
-// BOJ 2447 º° Âï±â - 10
-// Àç±Í
+// BOJ 2447 ë³„ ì°ê¸° - 10
+// ì¬ê·€
 
 #include <iostream>
 using namespace std;
