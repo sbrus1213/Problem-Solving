@@ -1,35 +1,31 @@
-// BOJ 2805 ³ª¹« ÀÚ¸£±â
+// BOJ 2805 ë‚˜ë¬´ ìë¥´ê¸°
 // Binary search
 
 #include <iostream>
+#include <vector>
+#include <algorithm>
 using namespace std;
 using ll = long long;
 
-ll n, m, height[1000001];
-ll cut_length(ll h) {
-	ll res = 0;
-	for (int i = 0; i < n; i++)
-		res += height[i] > h ? height[i] - h : 0;
-	return res;
-}
 int main() {
 	cin.tie(NULL); cout.tie(NULL);
 	ios_base::sync_with_stdio(false);
 
-	cin >> n >> m;
-	for (int i = 0; i < n; i++)
-		cin >> height[i];
+	ll n, m; cin >> n >> m;
 
-	ll low = 0, high = 2000000000, mid, tmp;
-	while (low + 1 < high) {
-		mid = (low + high) / 2;
-		tmp = cut_length(mid);
-		if (tmp >= m) {
-			low = mid;
-		}
-		else {
-			high = mid;
-		}
+	vector<ll> hgt(n);
+	for (ll& x : hgt) cin >> x;
+
+	ll l = 0, r = *max_element(hgt.begin(), hgt.end()) + 1;
+	while (l + 1 < r) {
+		ll mid = (l + r) / 2;
+
+		ll sum = 0;
+		for (ll x : hgt)
+			sum += (x > mid ? x - mid : 0);
+
+		if (sum >= m) l = mid;
+		else r = mid;
 	}
-	cout << low;
+	cout << l;
 }

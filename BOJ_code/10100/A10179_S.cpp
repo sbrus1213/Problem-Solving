@@ -1,18 +1,17 @@
-// BOJ 10179 ÄíÆù
-// ¼öÇĞ
+// BOJ 10179 ì¿ í°
+// ìˆ˜í•™
 
 #include <iostream>
 using namespace std;
 
 int main() {
-	cin.tie(NULL); cout.tie(NULL);
-	ios_base::sync_with_stdio(false);
+	cin.tie(NULL); ios_base::sync_with_stdio(false);
 
 	int tc; cin >> tc;
 	while (tc--) {
-		double x; cin >> x;
+		double p; cin >> p;
 		cout << fixed;
 		cout.precision(2);
-		cout << '$' << x * 0.8 << '\n';
+		cout << '$' << p * 0.8 << '\n';
 	}
 }
