@@ -1,4 +1,10 @@
+.env
+
 *.out
 *.out.dSYM
+
 .DS_Store
 .vscode
+
+.python-version
+__pycache__
