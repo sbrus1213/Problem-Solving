@@ -36,11 +36,11 @@ class Solution(BaseSolution):
 
     di = [-1, 0, 1, 0]
     dj = [0, -1, 0, 1]
-    
+
     def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
         n = len(grid)
         m = len(grid[0])
-        
+
         max_area = 0
         for i in range(n):
             for j in range(m):
@@ -50,7 +50,7 @@ class Solution(BaseSolution):
                 grid[i][j] = 2
                 cur_area = 0
                 stack = [(i, j)]
-                
+
                 while stack:
                     cur_area += 1
                     cur_i, cur_j = stack.pop()
@@ -64,7 +64,7 @@ class Solution(BaseSolution):
                         if grid[ni][nj] == 1:
                             grid[ni][nj] = 2
                             stack.append((ni, nj))
-                
+
                 max_area = max(max_area, cur_area)
 
         return max_area
